@@ -20,8 +20,26 @@ findSmallestNum(array);
 function isPrime(num) {
     for(var i = 2; i < num; i++) {
         if(num % i === 0) {
+          console.log(i);
+          console.log('false');
             return false;
         }
     }
-    return num > 1;
+    console.log(num);
+    console.log('true');
+    return true;
+    // return num > 1;
+}
+isPrime(17);
+
+// Create a function that returns all values in an array that aren't' odd.
+function noOdds(arr) {
+  var evens = [];
+  for (i=0; i<=arr.length-1; i++){
+    if (arr[i] % 2 === 0) {
+      evens.push(arr[i]);
+    }//end if
+  }//end for
+  console.log(evens);
+  return evens;
 }
