@@ -43,3 +43,38 @@ function noOdds(arr) {
   console.log(evens);
   return evens;
 }
+
+
+function firstDuplicate(a) {
+    for (i=0; i<=a.length; i++) {
+      var aVal = a.splice(a[i],1);
+          for (j=0;j<=a.length-1;j++) {
+            console.log(aVal[0], a[j]);
+              if (a[j] === aVal[0]) {
+                console.log(a[j]);
+                  return a[j];
+              }
+          }
+    }
+    return -1;
+}
+firstDuplicate([2, 3, 3, 1, 5, 2]);
+
+// Create a function that accepts a string and returns true if it's in the format of
+// a proper phone number and false if it's not. Assume any integer from 0-9
+// (in the appropriate spots) will produce a valid phone number.
+// This is what a valid phone number looks like: (123) 456-7890
+
+
+fib = [0,1];
+function findFibVal(num) {
+  for (i=2; i<=num;i++) {
+    var c = fib[i-1] + fib[i-2];
+    console.log(c);
+    fib.push(c);
+    console.log(fib[num]);
+  }
+  console.log (fib[num]);
+  return fib[num];
+}
+findFibVal (0);

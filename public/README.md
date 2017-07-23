@@ -1,2 +1,1 @@
-30 day challenge to make a daily commit on github
------------------------------------------------------
+## Fun code challenges - forget crossword puzzles, I'd rather do a code challenge!
