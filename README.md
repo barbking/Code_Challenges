@@ -1,5 +1,5 @@
 ## Fun code challenges and extended learning- Forget crossword puzzles, I'd rather do a code challenge!
-Interesting bit I read on a blog, I fall into the later developer category and wanted to learn more:
+Interesting bit I read on a blog:
 "As a developer, I see algorithms as they pertain to developing systems and applications. What’s interesting about this topic is that when one hears about it, it’s in usually two contexts:
 - CS students that learn all about it and have no idea how to apply them.
 - Developers that implement algorithms and later learn they’re based on already known ones."
