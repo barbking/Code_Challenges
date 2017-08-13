@@ -78,3 +78,17 @@ function findFibVal(num) {
   return fib[num];
 }
 findFibVal (0);
+
+usernames = [{username:"cking", admin:false},{username:"sking", admin:false}, {username:"admin", admin:true}];
+filterUsernames = function () {
+  for (i=0; i<=usernames.length; i++){
+  console.log ('admin status', usernames[i].username, usernames[i].admin);
+  if (usernames[i].admin) {
+    console.log('in loop', usernames[i],i);
+    usernames.splice(i,1);
+  }
+}
+console.log ('loadUsernames', usernames);
+return usernames;
+};
+filterUsernames();
