@@ -79,16 +79,43 @@ function findFibVal(num) {
 }
 findFibVal (0);
 
-usernames = [{username:"cking", admin:false},{username:"sking", admin:false}, {username:"admin", admin:true}];
-filterUsernames = function () {
-  for (i=0; i<=usernames.length; i++){
-  console.log ('admin status', usernames[i].username, usernames[i].admin);
-  if (usernames[i].admin) {
-    console.log('in loop', usernames[i],i);
-    usernames.splice(i,1);
-  }
+
+
+
+// Write a function: function solution(N); that, given a positive integer N,
+//  returns the length of its longest binary gap.
+//   The function should return 0 if N doesn't contain a binary gap.
+
+function solution(N) {
+    // write your code in JavaScript (Node.js 6.4.0)
+    var binary = N.toString(2);
+    console.log('N to binary -->',binary);
+    var biArray = Array.from(binary.toString()).map(Number);
+    console.log ('binary array-->',biArray);
+    var zeroCount = 0;
+    var nonZeroCount = 0;
+    var maxCount = 0;
+    var maxCountArray = [];
+    for (i=0; i<biArray.length; i++) {
+          if (biArray[i] === 0) {
+                zeroCount ++;
+                console.log('zeroCount in loop',zeroCount);
+            } else {
+              maxCount = zeroCount;
+              console.log('maxCount-->',maxCount);
+              maxCountArray.push(maxCount);
+              console.log('maxCountArray-->',maxCountArray);
+              zeroCount = 0;
+            }
+        }
+    maxCountArray.sort();
+    length = (maxCountArray.length)-1;
+      if ( maxCountArray[length] === 0) {
+        console.log('in 0 return');
+          return 0;
+      } else {
+        console.log('in max array val',maxCountArray[length]);
+          return maxCountArray[length];
+      }
 }
-console.log ('loadUsernames', usernames);
-return usernames;
-};
-filterUsernames();
+solution(9);
