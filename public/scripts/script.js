@@ -44,7 +44,7 @@ function noOdds(arr) {
   return evens;
 }
 
-
+//function to find firs duplicate
 function firstDuplicate(a) {
     for (i=0; i<=a.length; i++) {
       var aVal = a.splice(a[i],1);
@@ -60,11 +60,6 @@ function firstDuplicate(a) {
 }
 firstDuplicate([2, 3, 3, 1, 5, 2]);
 
-// Create a function that accepts a string and returns true if it's in the format of
-// a proper phone number and false if it's not. Assume any integer from 0-9
-// (in the appropriate spots) will produce a valid phone number.
-// This is what a valid phone number looks like: (123) 456-7890
-
 
 fib = [0,1];
 function findFibVal(num) {
@@ -79,15 +74,10 @@ function findFibVal(num) {
 }
 findFibVal (0);
 
-
-
-
 // Write a function: function solution(N); that, given a positive integer N,
 //  returns the length of its longest binary gap.
 //   The function should return 0 if N doesn't contain a binary gap.
-
 function solution(N) {
-    // write your code in JavaScript (Node.js 6.4.0)
     var binary = N.toString(2);
     console.log('N to binary -->',binary);
     var biArray = Array.from(binary.toString()).map(Number);
