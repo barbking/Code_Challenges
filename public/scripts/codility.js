@@ -61,3 +61,30 @@ function solution2(A) {
 
 }//end of solution func
 console.log(solution2([9,3,9,3,9,7,9]));
+
+/*A zero-indexed array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is also moved to the first place.
+For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7]. The goal is to rotate array A K times; that is, each element of A will be shifted to the right by K indexes.
+Write a function:
+function solution(A, K);
+that, given a zero-indexed array A consisting of N integers and an integer K, returns the array A rotated K times. */
+function solution3(A,K) {
+  if (K === 0 || A.length === 0) {
+    return A;
+  } else {
+    for (i=1; i<=K; i++) {
+      rotateOne();
+    }
+  }
+  function rotateOne() {
+    //get last val in array to remove
+    var lastIndexVal = A[A.length-1];
+    var rotatedArray = A.slice(0,A.length-1);
+    //add the last val to beg of rotatedArray
+    rotatedArray.splice(0,0,lastIndexVal);
+    A = rotatedArray;
+  }
+    return A;
+  // rotatedArray.splice(0,0,A[A.length-1]);
+  // console.log(rotatedArray);
+}
+console.log(solution3([3,8,9,7,6],3));
