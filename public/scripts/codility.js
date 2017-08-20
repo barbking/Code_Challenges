@@ -2,35 +2,35 @@
 //  returns the length of its longest binary gap.
 //   The function should return 0 if N doesn't contain a binary gap.
 function solution(N) {
-    var binary = N.toString(2);
-    console.log('N to binary -->',binary);
-    var biArray = Array.from(binary.toString()).map(Number);
-    console.log ('binary array-->',biArray);
-    var zeroCount = 0;
-    var nonZeroCount = 0;
-    var maxCount = 0;
-    var maxCountArray = [];
-    for (i=0; i<biArray.length; i++) {
-          if (biArray[i] === 0) {
-                zeroCount ++;
-                console.log('zeroCount in loop',zeroCount);
-            } else {
-              maxCount = zeroCount;
-              console.log('maxCount-->',maxCount);
-              maxCountArray.push(maxCount);
-              console.log('maxCountArray-->',maxCountArray);
-              zeroCount = 0;
-            }
-        }
-    maxCountArray.sort();
-    length = (maxCountArray.length)-1;
-      if ( maxCountArray[length] === 0) {
-        console.log('in 0 return');
-          return 0;
-      } else {
-        console.log('in max array val',maxCountArray[length]);
-          return maxCountArray[length];
-      }
+  var binary = N.toString(2);
+  console.log('N to binary -->',binary);
+  var biArray = Array.from(binary.toString()).map(Number);
+  console.log ('binary array-->',biArray);
+  var zeroCount = 0;
+  var nonZeroCount = 0;
+  var maxCount = 0;
+  var maxCountArray = [];
+  for (i=0; i<biArray.length; i++) {
+    if (biArray[i] === 0) {
+      zeroCount ++;
+      console.log('zeroCount in loop',zeroCount);
+    } else {
+      maxCount = zeroCount;
+      console.log('maxCount-->',maxCount);
+      maxCountArray.push(maxCount);
+      console.log('maxCountArray-->',maxCountArray);
+      zeroCount = 0;
+    }
+  }
+  maxCountArray.sort();
+  length = (maxCountArray.length)-1;
+    if ( maxCountArray[length] === 0) {
+      console.log('in 0 return');
+      return 0;
+    } else {
+      console.log('in max array val',maxCountArray[length]);
+      return maxCountArray[length];
+  }
 }
 solution(9);
 
@@ -68,7 +68,7 @@ Write a function:
 function solution(A, K);
 that, given a zero-indexed array A consisting of N integers and an integer K, returns the array A rotated K times. */
 function solution3(A,K) {
-  if (K === 0 || A.length === 0) {
+  if (K === 0 || A.length === 0 || A.length === 1) {
     return A;
   } else {
     for (i=1; i<=K; i++) {
@@ -88,3 +88,42 @@ function solution3(A,K) {
   // console.log(rotatedArray);
 }
 console.log(solution3([3,8,9,7,6],3));
+
+function solution4(A, K) {
+    K = K % A.length;
+    if (A.length === 0 || A.length === 1 || K === 0) {
+        return A;
+    }
+
+    let part = A.splice(A.length - K);
+    return part.concat(A);
+}
+console.log(solution4([3,8,9,7,6],3));
+
+// Your goal is to find that missing element.
+function solution6(A) {
+    var length = A.length;
+    var sum = ((length + 1) /2) * (length + 2);
+    var sumMinusMissing = 0;
+    console.log('sum',sum);
+    for (i = 0; i < length; i++) {
+        sumMinusMissing += A[i];
+        console.log(sumMinusMissing);
+    }
+    return sum - sumMinusMissing;
+}
+console.log(solution6([2,3,7,6,5,8,1,]));
+
+/*A small frog wants to get to the other side of the road. The frog is currently located at position X and wants
+ to get to a position greater than or equal to Y. The small frog always jumps a fixed distance, D.
+Count the minimal number of jumps that the small frog must perform to reach its target.*/
+function solution7(X, Y, D) {
+  var travelDist = Y - X;
+  var jumps = travelDist/D;
+  return Math.ceil(jumps);
+}
+
+//TapeEquilibrium
+function solution(A) {
+
+}
