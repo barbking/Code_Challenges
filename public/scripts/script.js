@@ -109,3 +109,107 @@ function solution(N) {
       }
 }
 solution(9);
+
+
+
+function findNumber(arr, k) {
+    for (i=0; i<arr.length; i++) {
+        if (arr[i] == k){
+            return 'YES';
+        }
+    }
+    return 'NO';
+}
+console.log(findNumber([1,2,3],1));
+
+
+function oddNumbers(l, r) {
+  var start, end;
+  result = [];
+  if (l % 2 !== 0) {
+    start = l;
+  } else {
+    start = l + 1;
+  }
+  console.log(start);
+  if (r % 2 !== 0) {
+    end = r;
+  } else {
+    end = r - 1;
+  }
+  console.log(end);
+  j = start;
+  while (j <= end){
+    result.push(j);
+    j++;
+  }
+  console.log(result);
+  return result;
+}
+
+oddNumbers(2,9);
+
+// var x = 100
+//   function test() {
+//     if(false) {
+//       var x = 199;
+//     }
+//     console.log(x);
+//   }
+//   test();
+
+function alternatingMerge(array1, array2)
+//this function will merge two different arrays in an alternating fashion
+//i.e = array1[0], array2[0], array1[1], array2[1], array1[2], array2[2], ... , etc
+{
+    var mergedArray;
+    var i; // while loop counter
+    var j; //
+    var k; //
+    var arrayLengths;
+
+    arrayLengths = array1.length + array2.length;
+    i = 0; //
+    j = 0; // ARRAY1 COUNTER
+    k = 0; // ARRAY2 COUNTER
+    mergedArray = new Array(arrayLengths);
+    //window.alert(mergedArray);
+
+    while (i < arrayLengths)
+    {
+        if (i%2 === 0)
+        {
+            mergedArray[i] = array2[j];
+            j = j + 1;
+        }
+        else
+        {
+            mergedArray[i] = array1[k];
+            k = k + 1;
+        }
+        i = i + 1;
+    }
+
+    var results = mergedArray.join("");
+    console.log(results);
+    return results;
+}
+alternatingMerge(['a','a'],['b','b']);
+
+function mergeAlternating(array1, array2) {
+    var mergedArray = [];
+
+    for (var i = 0, len = Math.max(array1.length, array2.length); i < len; i++) {
+        if (i < array1.length) {
+            mergedArray.push(array1[i]);
+        }
+        if (i < array2.length) {
+            mergedArray.push(array2[i]);
+        }
+    }
+    var results = mergedArray.join("");
+    console.log(results);
+    return results;
+}
+
+mergeAlternating(['a','a'],['b','b','c']);

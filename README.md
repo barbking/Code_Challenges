@@ -12,6 +12,7 @@ Quicksort - what JavaScript's native .sort() uses.  Quicksort is a divide and co
 Mergesort - also divide and conquer algorithm, comparison-based.  First divide the list into the smallest unit (1 element), then compare each element with the adjacent list to sort and merge the two adjacent lists. Finally all the elements are sorted and merged.
 
 #### Big O Notation
+- bigocheatsheet.com
 - O(1) describes an algorithm that will always execute in the same time (or space) regardless of the size of the input data set.
 - O(N) describes an algorithm whose performance will grow linearly and in direct proportion to the size of the input data set.
 - O(N2) represents an algorithm whose performance is directly proportional to the square of the size of the input data set. This is common with algorithms that involve nested iterations over the data set. Deeper nested iterations will result in O(N3), O(N4) etc.

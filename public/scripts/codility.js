@@ -124,6 +124,37 @@ function solution7(X, Y, D) {
 }
 
 //TapeEquilibrium
-function solution(A) {
+function solution8(A) {
+  var sumAfter = sumBefore = 0;
+  var minDiff = Number.POSITIVE_INFINITY;
 
+  A.forEach(function(value){
+      sumAfter += value;
+  });
+  console.log('sumAfter',sumAfter);
+  for (var i = 1; i < A.length; i++){
+      sumBefore += A[i -1];
+      console.log('sumBefore',sumBefore);
+      sumAfter = sumAfter - A[i -1];
+      console.log('sumAfter',sumAfter);
+      minDiffTemp = Math.abs(sumBefore - sumAfter);
+      if (minDiffTemp < minDiff){
+          minDiff = minDiffTemp;
+          console.log('minDiff',minDiff);
+      }
+  }
+  return minDiff;
+  }
+console.log(solution8([3,1,2,4,3]));
+
+
+function main() {
+    var n = 5;
+    var k = 0;
+    var a = [1, 2 , 3, 4, 5];
+    if (k === 0 || a.length === 1) {
+        console.log(a.(''));
+        return a.join();
+    }
 }
+main();
