@@ -46,8 +46,21 @@ function checkSubset (array1, array2) {
       }
     }//end j loop
   }//end i loop
-  return true;
+return true;
 }
 array1 = [2,5,6,3,4,8];
 array2 = [2,3];
 console.log(checkSubset(array1, array2));
+
+
+// fibonacci
+function fibonacci(n) {
+    if(n <= 2) {
+        return 1;
+    }
+    else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+console.log("fibonacci sum: ", fibonacci(10))
